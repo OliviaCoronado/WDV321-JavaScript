@@ -1,0 +1,81 @@
+Email Address Tests
+
+Inputs                      Expected
+
+mail@mail.com               Valid
+mail1@mail.com              Valid
+mail@mail1.com              Valid
+my.mail@mail.us             Valid
+my.mail@m.com               Valid
+mail@mail.programmer        Valid
+101.mail@mail.programmer    Valid
+mail_mail@mail.com          Valid
+1111@mail.com               Valid //not sure about this one
+1111.mail@mail.com          Valid
+1111mail@mail.com           Valid
+mail!@mail.com              Valid
+
+
+ 
+ 
+""                          Invalid
+" "                         Invalid
+"a"                         Invalid
+"aaaa"                      Invalid
+"1"                         Invalid
+"$"                         Invalid
+mail.com                    Invalid
+mail.mail.com               Invalid
+mail.m                      Invalid
+mail@m                      Invalid
+mail.mail@.com              Invalid
+
+-------------------
+Zip Code Tests
+
+Inputs                      Expected
+
+12345                      Valid
+98765                      Valid
+90000                      Valid 
+ 
+""                          Invalid
+" "                         Invalid
+mail                        Invalid
+1234                        Invalid
+123456                      Invalid
+1234567                     Invalid
+mail123                     Invalid
+123mail123                  Invalid
+mail.m                      Invalid
+?                           Invalid
+?12345                      Invalid
+-1234                       Invalid
+-12345                      Invalid
+$1234                       Invalid
+$12345                      Invalid
+
+------------------
+Switch Characters Tests
+Inputs                  Output
+>                       -
+<                       -
+'                       -
+
+''                      --
+><                      --
+//                      --
+/<>/                    ----
+
+>'Hello'<               --Hello--
+
+>Hello<                 -Hello-
+>123<                   -123-
+/Hello/                 -Hello-
+/123/                   -123-
+
+Switch<,>,'and/!        Switch-,-,-and-!
+
+git add 'mocha_file/phoneValidations/app/app.js'
+git add 'mocha_file/phoneValidations/test/validation.Test.js'
+git add 'mocha_file/phoneValidations/test.txt'
