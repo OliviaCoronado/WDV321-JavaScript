@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV321 Advanced Javascript - JSON</title>
+<script src="createJSON.js"></script>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+
+  <script>
+  let JSONObject1 = localStorage.getItem("Student1Info");
+  let Object1 = JSON.parse(JSONObject1);
+
+  let JSONObject2 = localStorage.getItem("Student2Info");
+  let Object2 = JSON.parse(JSONObject2);
+
+  let JSONObject3 = localStorage.getItem("Student3Info");
+  let Object3 = JSON.parse(JSONObject3);
+
+	function pageLoad(){
+
+// Card 1
+		document.getElementById("idStudent1").innerHTML = Object1.student_id;
+		document.getElementById("gpaStudent1").innerHTML = Object1.student_gpa;
+		//document.getElementById("courseStudent1").innerHTML = "<li>" + Object1[0].student_courses + "</li>"; //works but not right format
+
+		for (x=0; x < Object1.student_courses.length; x++){	
+		document.querySelector("#courseStudent1").innerHTML += "<li>" + Object1.student_courses[x] + "</li>";
+		}
+		//console.log(Object1.student_courses);		//works
+
+
+//Card 2
+		document.getElementById("idStudent2").innerHTML = Object2.student_id;
+		document.getElementById("gpaStudent2").innerHTML = Object2.student_gpa;
+		//document.getElementById("courseStudent2").innerHTML = "<li>" + Object2[1].student_courses + "</li>"; //works but not right format
+		for (x=0; x < Object2.student_courses.length; x++){	
+		document.querySelector("#courseStudent2").innerHTML += "<li>" + Object2.student_courses[x] + "</li>";
+		}
+
+//Card 3
+		document.getElementById("idStudent3").innerHTML = Object3.student_id;
+		document.getElementById("gpaStudent3").innerHTML = Object3.student_gpa;
+		//document.getElementById("courseStudent3").innerHTML = "<li>" + Object3[2].student_courses + "</li>"; //works but not right format
+		for (x=0; x < Object3.student_courses.length; x++){	
+		document.querySelector("#courseStudent3").innerHTML += "<li>" + Object3.student_courses[x] + "</li>";
+		}
+
+	}//end pageLoad
+  </script>
+
+<!--
+    Instructions:
+    	-1. Incorporate the createJSON.js file into this page as an external javascript file.
+        -2. Access the JSON object in local storage and convert it into a Javascript object.
+        3. Use the information in the object to complete the student card.   
+-->
+
+<style>
+	.studentCard	{
+		width:200px;
+		box-sizing:border-box;
+		background-color:lightblue;
+		padding-left:5px;
+		padding-top:3px;
+		border:thin solid blue;
+		box-shadow: 2px 2px 2px grey;		
+	}
+	
+	.studentCard h3	{
+		margin:0px;	
+	}
+</style>
+
+
+
+</head>
+
+<body onload="pageLoad()">
+	<h1>WDV321 Advanced Javascript</h1>
+    <h2>Unit-8 JSON Objects</h2>
+    <h3>Creating and consuming a JSON object</h3>
+
+<div class="studentCard">
+	<h3>Student ID: <span id="idStudent1"></span> </h3>
+    <p>Student GPA: <span id="gpaStudent1"></span></p>
+	<p>Student Courses: 
+    	<ul id="courseStudent1">
+			<!-- display the courses as list items -->
+    	</ul>
+    </p>  
+
+</div>  
+<div class="studentCard">
+	<h3>Student ID: <span id="idStudent2"></span> </h3>
+    <p>Student GPA: <span id="gpaStudent2"></span></p>
+	<p>Student Courses: 
+    	<ul id="courseStudent2">
+			<!-- display the courses as list items -->
+    	</ul>
+    </p>  
+
+</div> 
+<div class="studentCard">
+	<h3>Student ID: <span id="idStudent3"></span> </h3>
+    <p>Student GPA: <span id="gpaStudent3"></span></p>
+	<p>Student Courses: 
+    	<ul id="courseStudent3">
+			<!-- display the courses as list items -->
+    	</ul>
+    </p>  
+
+</div>   
+
+
+</body>
+</html>

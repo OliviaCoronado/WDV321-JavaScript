@@ -1,0 +1,50 @@
+<script>
+    let studentInformation2 = [	//- Create a Javascript object including an array
+        {
+            student_id: "332443",
+            student_gpa: "3.6",
+            student_courses: ["WDV101", "WDV131", "WDV105"]
+        },
+        {
+            student_id: "545467",
+            student_gpa: "2.7",
+            student_courses: ["WDV101", "WDV131", "WDV105", "WDV221", "WDV205"]
+        },
+        {
+            student_id: "128574",
+            student_gpa: "3.4",
+            student_courses: ["WDV101", "WDV131", "WDV105", "WDV221", "WDV205", "WDV341"]
+        },
+        {
+            student_id: "750056",
+            student_gpa: "1.85",
+            student_courses: ["WDV101","WDV131","WDV105","WDV221","WDV205"]
+        }
+    ]
+        console.log("studentInformation: ")
+        console.log(studentInformation2[0].student_id);
+        console.log(studentInformation2[0].student_gpa);
+        console.log(studentInformation2[0].student_courses[0]);
+        console.log(studentInformation2[0].student_courses[1]);
+        console.log(studentInformation2[0].student_courses[2]);
+       
+    
+        
+    
+    
+    
+    
+        //let schoolInfo = JSON.stringify(studentInformation);
+    
+       //console.log("schoolInfo JSON Objects");
+       //console.log(schoolInfo);
+    
+       //localStorage.setItem("studentSchoolInfo", schoolInfo );
+    
+       let school2  = JSON.stringify(studentInformation2);  //- Convert the Javascript object into a JSON object
+            //console.log("schoolInfo JSON Objects");
+            //console.log(schoolInfo);
+    
+            localStorage.setItem("studentSchoolInfo2", school2 ); //- Store the JSON object into local storage
+    
+    </script>

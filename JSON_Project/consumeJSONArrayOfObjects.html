@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>WDV321 Advanced Javascript - JSON</title>
+	<script src="createJSONArray.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+	<script>
+		let JSONObjectArray = localStorage.getItem("studentSchoolInfo2");	//get 'studentSchoolInfo' from local storage (JSON format) give value(JSONObject)
+		let inObjectArray = JSON.parse(JSONObjectArray);		// parse - turn JSON Object in to JS Object
+		//console.log (inObjectArray); //works
+
+		function pageLoad() {
+
+			// Card 1
+			document.getElementById("idStudent1").innerHTML = inObjectArray[0].student_id;
+
+			document.getElementById("gpaStudent1").innerHTML = inObjectArray[0].student_gpa;
+			//document.getElementById("courseStudent1").innerHTML = "<li>" + inObject[0].student_courses + "</li>"; //works but not right format
+
+
+
+
+			for (x = 0; x < inObjectArray[0].student_courses.length; x++) {
+				document.querySelector("#courseStudent1").innerHTML += "<li>" + inObjectArray[0].student_courses[x] + "</li>";
+			}
+			//console.log(inObject[0].student_courses);		//works
+
+
+			//Card 2
+			document.getElementById("idStudent2").innerHTML = inObjectArray[1].student_id;
+			document.getElementById("gpaStudent2").innerHTML = inObjectArray[1].student_gpa;
+			//document.getElementById("courseStudent2").innerHTML = "<li>" + inObjectArray[1].student_courses + "</li>"; //works but not right format
+			for (x = 0; x < inObjectArray[1].student_courses.length; x++) {
+				document.querySelector("#courseStudent2").innerHTML += "<li>" + inObjectArray[1].student_courses[x] + "</li>";
+			}
+
+
+			//Card 3
+			document.getElementById("idStudent3").innerHTML = inObjectArray[2].student_id;
+			document.getElementById("gpaStudent3").innerHTML = inObjectArray[2].student_gpa;
+			//document.getElementById("courseStudent3").innerHTML = "<li>" + inObjectArray[2].student_courses + "</li>"; //works but not right format
+			for (x = 0; x < inObjectArray[2].student_courses.length; x++) {
+				document.querySelector("#courseStudent3").innerHTML += "<li>" + inObjectArray[2].student_courses[x] + "</li>";
+			}
+			//Card 4
+			document.getElementById("idStudent4").innerHTML = inObjectArray[3].student_id;
+			document.getElementById("gpaStudent4").innerHTML = inObjectArray[3].student_gpa;
+			//document.getElementById("courseStudent4").innerHTML = "<li>" + inObjectArray[3].student_courses + "</li>"; //works but not right format
+			for (x = 0; x < inObjectArray[3].student_courses.length; x++) {
+				document.querySelector("#courseStudent4").innerHTML += "<li>" + inObjectArray[3].student_courses[x] + "</li>";
+			}
+
+		}//end pageLoad
+	</script>
+
+	<!--
+    
+    Instructions:
+    	-1. Incorporate the createJSONArray.js file into this page as an external javascript file.
+        -2. Access the JSON object in local storage and convert it into a javascript object.
+        3. Use the information in the object to complete a student card for EACH student object.
+        4. Account for the fact that there could be a random number of student objects. 
+        5. Use Jquery commands whenever possible.  
+-->
+
+	<style>
+		.studentCard {
+			width: 200px;
+			box-sizing: border-box;
+			background-color: lightgreen;
+			padding-left: 5px;
+			padding-top: 3px;
+			border: thin solid blue;
+			box-shadow: 2px 2px 2px grey;
+		}
+
+		.studentCard h3 {
+			margin: 0px;
+		}
+	</style>
+
+
+
+</head>
+
+<body onload="pageLoad()">
+	<h1>WDV321 Advanced Javascript</h1>
+	<h2>Unit-8 JSON Objects</h2>
+	<h3>Creating and consuming a JSON object</h3>
+
+	<div class="studentCard">
+		<h3>Student ID: <span id="idStudent1"></span> </h3>
+		<p>Student GPA: <span id="gpaStudent1"></span></p>
+		<p>Student Courses:
+		<ul id="courseStudent1">
+			<!-- display the courses as list items -->
+		</ul>
+		</p>
+
+	</div>
+	<div class="studentCard">
+		<h3>Student ID: <span id="idStudent2"></span> </h3>
+		<p>Student GPA: <span id="gpaStudent2"></span></p>
+		<p>Student Courses:
+		<ul id="courseStudent2">
+			<!-- display the courses as list items -->
+		</ul>
+		</p>
+
+	</div>
+	<div class="studentCard">
+		<h3>Student ID: <span id="idStudent3"></span> </h3>
+		<p>Student GPA: <span id="gpaStudent3"></span></p>
+		<p>Student Courses:
+		<ul id="courseStudent3">
+			<!-- display the courses as list items -->
+		</ul>
+		</p>
+
+	</div>
+	<div class="studentCard">
+		<h3>Student ID: <span id="idStudent4"></span> </h3>
+		<p>Student GPA: <span id="gpaStudent4"></span></p>
+		<p>Student Courses:
+		<ul id="courseStudent4">
+			<!-- display the courses as list items -->
+		</ul>
+		</p>
+
+	</div>
+
+
+</body>
+
+</html>

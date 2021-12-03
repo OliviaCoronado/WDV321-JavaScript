@@ -1,0 +1,39 @@
+<script>
+let studentInformation = [	//- Create a Javascript object including an array
+	{
+		student_id: "332443",
+		student_gpa: "3.6",
+		student_courses: ["WDV101", "WDV131", "WDV105"]
+	},
+	{
+		student_id: "545467",
+		student_gpa: "2.7",
+		student_courses: ["WDV101", "WDV131", "WDV105", "WDV221", "WDV205"]
+	},
+	{
+		student_id: "128574",
+		student_gpa: "3.4",
+		student_courses: ["WDV101", "WDV131", "WDV105", "WDV221", "WDV205", "WDV341"]
+	}
+]
+
+//Tested on a HTML -Works
+//console.log("studentInformation: ")
+//console.log(studentInformation[0].student_id);
+//console.log(studentInformation[0].student_gpa);
+//console.log(studentInformation[0].student_courses[0]);
+//console.log(studentInformation[0].student_courses[1]);
+//console.log(studentInformation[0].student_courses[2]);
+	
+	
+
+        //console.log("studentInformation: ")
+        //console.log(studentInformation);      
+
+		let schoolInfo  = JSON.stringify(studentInformation);  //- Convert the Javascript object into a JSON object
+        //console.log("schoolInfo JSON Objects");
+        //console.log(schoolInfo);
+
+		localStorage.setItem("studentSchoolInfo", schoolInfo ); //- Store the JSON object into local storage
+
+</script>
