@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name=viewpoint content="width=device=width, initial-scale=1.0">
+        <title> Document</title>
+<script>
+
+// retrieve the pageData from the localStorage
+    console.log("JSON Formmated object: ")
+    console.log (localStorage.getItem("pageData")); //check to see if localStorage has the JSON object
+
+    let pageDataJSON = (localStorage.getItem("pageData")); // put JSON Object in to local variable
+    let pageData = JSON.parse(pageDataJSON);  //covert JSON to JS formatted object
+
+    //console.log("Original: size = 1 ")
+    //console.log(pageData); //test that object is back in JS format
+
+
+
+
+</script>
+
+    </head>
+
+    <body>
+        <h1>About Page</h1>
+        <h2>Unit-6 Local Storage Assignment</h2>
+        <h3>Original Content</h3>
+        <p><script> document.write(pageData.name); </script></p>
+        <p><script> document.write(pageData.size); </script></p>
+
+        <script>
+            //Changing or Update content
+            pageData.size = "2GB";
+            console.log("Changed Data Check: ");
+            console.log(pageData);
+
+            //get back in to local storage
+            let pageDataNewJSON = JSON.stringify(pageData); //turn in to JSON obejct
+            localStorage.setItem("pageData", pageDataNewJSON); //overwritten the original pageData
+
+            console.log("Update into JSON to Local Storage")
+            console.log(localStorage.getItem("pageData"));
+        </script>
+     
+     <h3>Updated Content</h3>
+     <p><script> document.write(pageData.name); </script></p>
+     <p><script> document.write(pageData.size); </script></p>
+
+        
+    </body>
+</html>

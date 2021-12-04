@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name=viewpoint content="width=device=width, initial-scale=1.0">
+        <title> Document</title>
+<script>
+
+
+//javascript formated object
+    let product = {
+        name:"Memory",
+        size: "1GB"
+    }
+
+    //JSON formated object
+
+    let productJSON = JSON.stringify(product); //take product object and turn into JSON
+
+    //put product into Local Storage
+    localStorage.setItem("pageData", productJSON)    //file under "pageData" name , pass to productJSON object
+    console.log(localStorage.getItem("pageData"));  //test 
+
+
+</script>
+
+    </head>
+
+    <body>
+        <h1>Home Page</h1>
+        <h2>Unit-6 Local Storage Assignment</h2>
+
+
+        
+    </body>
+</html>
