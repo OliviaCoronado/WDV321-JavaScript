@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name=viewpoint content="width=device=width, initial-scale=1.0">
+    <title> JS 6-1: About Page</title>
+
+
+    <script>
+        console.log("JSON formatted: ");
+        console.log(localStorage.getItem("textbooksArray"));
+
+        let arrayJSON = localStorage.getItem("textbooksArray"); //get from localStorage
+        let arrayObject = JSON.parse(arrayJSON);
+
+        //console.log("Original: Book 1 price = 39.95 ")
+        //console.log(arrayObject);
+
+
+
+    </script>
+
+</head>
+
+<body >
+    <h1>WDV321 Advanced Javascript</h1>
+    <h2>Unit-6 Demostrate local Storage</h2>
+
+    <h3>Original Content</h3>
+    <h3>Book 1</h3>
+
+    <div>
+        <p>Title: <script>document.write(arrayObject[0].book_title);</script></p>
+        <p>Price: <script>document.write("$" + arrayObject[0].book_price);</script></p>
+        <p>Author: <script>document.write(arrayObject[0].book_Author);</script></p>
+    </div>
+
+    <h3>Book 2</h3>
+    <div>
+        <p>Title: <script>document.write(arrayObject[1].book_title);</script></p>
+        <p>Price: <script>document.write("$" + arrayObject[1].book_price);</script></p>
+        <p>Author: <script>document.write(arrayObject[1].book_Author);</script></p>
+    </div>
+    <br>
+
+    <script>
+        arrayObject[0].book_price = 43.95;
+
+        console.log("Changed Data Check: ");
+        console.log(arrayObject);
+
+    //Back in to Local Storage
+        bookUpDateJSON = JSON.stringify(arrayObject);
+        localStorage.setItem("arrayObject", bookUpDateJSON);
+
+        console.log("Update into JSON to Local Storage");
+        console.log(localStorage.getItem("arrayObject"));
+    </script>
+
+
+<h3>Updated Content</h3>
+
+<h3>Book 1</h3>
+<div>
+    <p>Title: <script>document.write(arrayObject[0].book_title);</script></p>
+    <strong><p>Price: <script>document.write("$" + arrayObject[0].book_price);</script></p></strong>
+    <p>Author: <script>document.write(arrayObject[0].book_Author);</script></p>
+</div>
+
+<h3>Book 2</h3>
+<div>
+    <p>Title: <script>document.write(arrayObject[1].book_title);</script></p>
+    <p>Price: <script>document.write("$" + arrayObject[1].book_price);</script></p>
+    <p>Author: <script>document.write(arrayObject[1].book_Author);</script></p>
+</div>
+
+</body>
+
+</html>

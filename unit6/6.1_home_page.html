@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name=viewpoint content="width=device=width, initial-scale=1.0">
+        <title> JS 6-1: Local Storage</title>
+<script>
+       
+       
+       let jsJavaBook = {
+            book_title: "Java and XML",
+            book_price: 39.95,
+            book_publisher: "Reilly & Associates",
+            book_Author: "McLaughlin, Brett"
+        };
+
+        //console.log("jsJavaBook:");
+        //console.log(jsJavaBook);        //Test - Works
+
+        //Book 2
+        let jsVBBook = {
+            book_title: "Professional Visual Basic 6 XML",
+            book_price: 49.99,
+            book_publisher: "Wrox Press",
+            book_Author: "Britt, James"
+        };
+
+        //console.log("jsVBBook: ")
+        //console.log(jsVBBook);      
+        //console.log(jsVBBook.bookAuthors[0].author_Fname + " " + jsVBBook.bookAuthors[0].author_Lname);
+        //console.log(jsVBBook.bookAuthors[1].author_Fname);
+
+        let jsTextbooks = [jsJavaBook, jsVBBook];
+        //console.log("jsTextbooks: ")
+        //console.log(jsTextbooks);   //Test - works
+
+        console.log("JS Format:");
+        console.log(jsTextbooks);
+
+        let textbookJSON  = JSON.stringify(jsTextbooks); //JS to JSON
+        localStorage.setItem("textbooksArray", textbookJSON); //JSON stored in localStorage
+
+        console.log("JSON format:")
+        console.log(textbookJSON);
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>WDV321 Advanced Javascript</h1>
+        <h2>Unit-6 Demostrate local Storage</h2>
+
+        <h3><a href="../unit6/6.1_about_page.html" target="_blank">About Page</a></h3>
+
+    </body>
+
+</html>
